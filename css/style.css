@@ -6801,3 +6801,8 @@ i:before {
 .introduction_item a {
     pointer-events: none !important;
 }
+
+.brand-text {
+  color: #fff;
+  font-weight: 700;
+}
