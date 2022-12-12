@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         
-        <title>Autotrain</title>
+        <title>Contact - Autotrain</title>
 
         <!-- Icon css link -->
         <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -76,19 +76,13 @@
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li class="active" ><a href="index.html">Home</a></li>
-                                <li class="dropdown submenu">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rentals &nbsp;▼</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="kayak-rental.html">Kayak Rental</a></li>
-                                        <li><a href="paddle-board-rental.html">Paddle Board Rental</a></li>
-                                        <li><a href="party-paddle-board.html">Party Paddle Board</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="insurance.html">Insurance</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="bookings.html">Bookings</a></li>
+                                <li class="active"><a href="contact.html">Contact Us</a></li>
+                                <li><a href="refund-terms-conditions.html">Refund - Terms&Cconditions</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
@@ -125,96 +119,47 @@
 
         </section>
 
-        <section class="get_contact_area">
 
-            <div class="container">
+        <section class="room_details_area">
 
-                <div class="row get_contact_inner">
+           <div class="container">
 
-                    <div class="col-md-6">
+            <div class=" y-single_info_inner y-section_content">
 
-                        <div class="left_ex_title">
+                <div class="row m-0 justify-content-between" style="text-align: center;">
 
-                            <h2>get in <span>touch</span></h2>
+                    <div class="col-sm-12 ">
 
-                        </div>
-  
-                        <div class="contact-form contact_us_form row m0" id="frmContact">
-                                <div id="mail-status"></div> 
-                            <div class="form-group col-md-12">
+                       <div class="extra-content prose">
 
-                        <input type="text" class="form-control" id="userName" name="userName demoInputBox" placeholder="Name" required>
+                          <h1>Our Core Values</h1>
 
-                            </div>
+                          <br>
 
-                              
+                          <p>Base on Safety//two Focus on Quality Service two//really dependable two Conduct all joint efforts, appreciate and compassion</p>
+                            <br>
 
+                          <p>Taxi two for journeys of any distance, going from a quick region break broad ride. As a full-organization taxi association, all choices are nearby 24 hours out of every day, 365 days out of each year, for rides on-demand or anticipated advance.</p>
 
+                          </div>
 
-                          <div class="form-group col-md-12">
+                          <br>
+                          <br>
 
-                                <input type="email" class="form-control" id="userEmail" name="userEmail demoInputBox" placeholder="Email" required>
+                          <h1>OUR VISION
+                            </h1>
+                            <br>
 
-                            </div>
+                          <p>To investigate the ninety 5 years of closed by utilizing industry-driving trip to continue as the relied upon organization of esteemed transportation choices in each neighborhood we serve.</p>
+                            <br>
+                            <br>
 
-                            <div class="form-group col-md-12">
-
-                                <input type="text" class="form-control" id="userphone" name="userphone demoInputBox" placeholder="Phone no."required>
-
-                            </div>
-
-                            <div class="form-group col-md-12">
-
-                                <textarea class="form-control" name="content demoInputBox" id="content" rows="1" placeholder="Message"></textarea>
-
-                            </div>
-
-                            <div class="form-group col-md-12">
-                                <button type="submit" value="send" class="site-btn sb-c1 btn submit_btn form-control" onClick="sendContact();">Send</button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <div class="right_contact_info">
-
-                            <div class="contact_info_title">
-
-                                <h3>Contact info</h3>
-
-                                <p>Have any Queries? Let us know. We will clear it for you at the best.</p>
-
-                            </div>
-
-                            <div class="contact_info_list">
-
-                                
-
-                                <div class="media">
-
-                                    <div class="media-left">
-
-                                        <i class="fa fa-phone"></i>
-
-                                    </div>
-
-                                    <div class="media-body">
-
-                                        <h4>Phone</h4>
-
-                                        <a href="#">+1 (800) 966 4431</a>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
+                          <h1>Contact Us
+                            </h1>
+                            <br>
+                          <h1>+1 (800) 303 2791
+                            </h1>
+                            <br>
 
                     </div>
 
@@ -222,120 +167,9 @@
 
             </div>
 
+        </div>
+
         </section>
-<script src="../code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-
-            <script>
-
-            function sendContact() {
-
-                var valid;  
-
-                valid = validateContact();
-
-                if(valid) {
-
-                    jQuery.ajax({
-
-                    url: "contact_mail.php",
-
-                    data:'userName='+$("#userName").val()+'&userEmail='+$("#userEmail").val()+'&userphone='+$("#userphone").val()+'&content='+$(content).val(),
-
-                    type: "POST",
-
-                    success:function(data){
-
-                    $("#mail-status").html(data);
-
-                    setTimeout(function(){// wait for 5 secs(2)
-
-           location.reload(); // then reload the page.(3)
-
-      }, 2000); 
-
-                    },
-
-                    error:function (){}
-
-                    });
-
-                }
-
-                
-
-            }
-
-            
-
-            function validateContact() {
-
-                var valid = true;   
-
-                $(".demoInputBox").css('background-color','');
-
-                $(".info").html('');
-
-                
-
-                if(!$("#userName").val()) {
-
-                    $("#userName-info").html("(required)");
-
-                    $("#userName").css('background-color','#FFFFDF');
-
-                    valid = false;
-
-                }
-
-                if(!$("#userEmail").val()) {
-
-                    $("#userEmail-info").html("(required)");
-
-                    $("#userEmail").css('background-color','#FFFFDF');
-
-                    valid = false;
-
-                }
-
-                if(!$("#userEmail").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
-
-                    $("#userEmail-info").html("(invalid)");
-
-                    $("#userEmail").css('background-color','#FFFFDF');
-
-                    valid = false;
-
-                }
-
-                if(!$("#userphone").val()) {
-
-                    $("#userphone-info").html("(required)");
-
-                    $("#userphone").css('background-color','#FFFFDF');
-
-                    valid = false;
-
-                }
-
-                
-
-                if(!$("#content").val()) {
-
-                    $("#content-info").html("(required)");
-
-                    $("#content").css('background-color','#FFFFDF');
-
-                    valid = false;
-
-                }
-
-                
-
-                return valid;
-
-            }
-
-        </script>
         
 
         <!--================Footer Area =================-->
@@ -360,7 +194,7 @@
 
                                 <ul class="instagram_list" id="instafeed">
 
-                                Autotrain is the leader of peer-to-peer toy rentals. Whether you want to be on the lake or in the mountains. Global Traveller Center LLC connects owners and renters in complete trust.
+                                Autotrain is the leader of peer-to-peer toy rentals. Whether you want to be on the lake or in the mountains. 
 
                                 </ul>
 
@@ -420,11 +254,11 @@
 
                                     <li><a href="contact.html">-  Contact Us</a></li>
 
-                                    <li><a href="terms-and-conditions.html">-  Terms & Conditions</a></li>
+                                    <li><a href="refund-terms-conditions.html">-  Terms & Conditions</a></li>
 
-                                    <li><a href="cancellation-policy.html">-  Cancellation Policy</a></li>
+                                    
 
-                                    <li><a href="insurance.html">-  Insurance</a></li>
+                                    <li><a href="bookings.html">-  Bookings</a></li>
 
                                 </ul>
 
