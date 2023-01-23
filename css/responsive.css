@@ -347,9 +347,9 @@
         border-bottom: 1px solid #cbcbcb;
         color: #242424;
     }
-    .middle_menu_area .navbar.navbar-default .nav.navbar-nav li:last-child a {
+    /* .middle_menu_area .navbar.navbar-default .nav.navbar-nav li:last-child a {
         display: none;
-    }
+    } */
     .middle_menu_area .navbar.navbar-default .nav.navbar-nav li.submenu ul .submenu ul{
         display: block;
     }
